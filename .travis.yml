@@ -1,0 +1,15 @@
+
+language: sh
+services:
+    - docker
+
+script:
+    - docker pull alpine
+
+deploy:
+    - provider: ecr
+        access_key_id: $ACCESS_KEY_ID
+        secret_access_key: $SECRET_ACCESS_KEY
+        region: eu-north-1
+        source: alpine:latest
+        target: test:latest
