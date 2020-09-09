@@ -8,6 +8,8 @@ script:
 
 deploy:
     - provider: ecr
+      edge:
+        branch: sf-port-920
       access_key_id: $ACCESS_KEY_ID
       secret_access_key: $SECRET_ACCESS_KEY
       region: eu-north-1
